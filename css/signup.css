@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #eaeaea;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #5b5221;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #5b5221;
+  font-weight: 500;
+}
+
+/* Buttons in nav */
+.btn {
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.filled {
+  background-color: #5b5221;
+  color: white;
+  border: none;
+}
+
+.btn.outlined {
+  border: 2px solid #5b5221;
+  background: transparent;
+  color: #5b5221;
+}
+.btn.fulled {
+  background-color: white;
+  color: #5b5221;
+  border: none;
+}
+
+.btn.filled:hover,
+.btn.outlined:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Signup Box */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.signup-form {
+  background-color: #5b5221;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 300px;
+  color: white;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.role-select {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.signup-form .btn {
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.login-link {
+  text-align: center;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.login-link a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar nav {
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .navbar nav a {
+    margin: 5px 0;
+  }
+
+  .btn {
+    padding: 6px 15px;
+    font-size: 0.8rem;
+  }
+
+  .signup-container {
+    padding: 40px 15px;
+  }
+
+  .signup-form {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .navbar nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar nav a {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    margin-top: 5px;
+  }
+
+  .signup-form {
+    padding: 25px 15px;
+  }
+
+  .signup-form h2 {
+    font-size: 1.2rem;
+  }
+
+  .signup-form input[type="text"],
+  .signup-form input[type="email"],
+  .signup-form input[type="password"] {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+}
