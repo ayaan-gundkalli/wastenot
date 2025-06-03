@@ -21,8 +21,8 @@
         <a href="#">Home</a>
         <a href="about.php">About</a>
         <a href="initiatives.php">Our Initiatives</a>
-        <a href="login.php" class="btn filled">Login</a>
-        <a href="signup.php" class="btn outlined">Signup</a>
+        <a href="auth/login.php" class="btn filled">Login</a>
+        <a href="auth/signup.php" class="btn outlined">Signup</a>
       </nav>
     </header>
 
@@ -173,7 +173,7 @@ if ($result && $result->num_rows > 0): ?>
     <!-- Feedback Form -->
     <div class="footer-feedback">
       <h4 class="footer-heading">Leave Feedback</h4>
-      <form action="feedback.php" method="POST" class="feedback-form">
+      <form action="actions/feedback_action.php" method="POST" class="feedback-form">
         <input type="text" name="name" placeholder="Your Name" required class="form-input">
         <input type="email" name="email" placeholder="Your Email" required class="form-input">
         <textarea name="message" placeholder="Your Message..." required class="form-textarea"></textarea>

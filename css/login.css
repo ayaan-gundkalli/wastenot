@@ -101,12 +101,11 @@ body {
   color: white;
   border: none;
 }
-
-.btn.outlined {
-  border: 2px solid #5b5221;
-  background: transparent;
-  color: #5b5221;
+.btn.filled:hover{
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
+
 .btn.fulled {
   background-color: white;
   color: #5b5221;

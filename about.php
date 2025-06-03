@@ -19,7 +19,7 @@
             </div> 
              <div class="btncenter">
                   <a href="index.php" class="home-btn">← Waste not</a>
-                  <a href="signup.php" class="home-btn">→ Signup</a>
+                  <a href="auth/signup.php" class="home-btn">→ Signup</a>
              </div>
         </div>
     </div>
