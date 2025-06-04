@@ -9,6 +9,8 @@
   <title>Lister Dashboard - Waste Not</title>
   <link rel="stylesheet" href="../css/lister.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
   <div class="dashboard-container">
@@ -53,7 +55,7 @@
           <input type="text" name="contact" id="contact" placeholder="Enter phone number" required>
 
           <label for="map">Mark Location (Map)</label>
-          <div id="map" class="map-box">[Map will load here]</div>
+          <div class="map-box"><div id="map"></div></div>
           <input type="hidden" name="latitude" id="latitude">
           <input type="hidden" name="longitude" id="longitude">
 
@@ -86,6 +88,8 @@
   </div>
 
   <script src="../script/ldashboard.js"></script>
+  <script src="../script/leaflet.js"></script>
+
 <!-- Modal Container -->
 <div id="detailModal" class="modal" style="display:none;">
   <div class="modal-content">
