@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("sss", $username, $email, $message);
 
     if ($stmt->execute()) {
-        header("Location: ../index.php?feedback=success");
+        header("Location: ../index.php");
         exit();
     } else {
         echo "<script>alert('Error submitting feedback.'); window.location.href='../index.php';</script>";

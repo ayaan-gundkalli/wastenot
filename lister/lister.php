@@ -35,9 +35,13 @@
         <form action="submit_listing.php" method="post" enctype="multipart/form-data">
           <label for="foodImage">Upload Photo</label>
           <input type="file" name="foodImage" id="foodImage" accept="image/*" required>
+          <label for="foodname">Enter Food Name</label>
+          <input type="text" name="foodname" placeholder="Enter food name" required>
 
-          <label for="description">Description & Address</label>
-          <textarea name="description" id="description" placeholder="Type food description and pickup address..." required></textarea>
+          <label for="description">Description</label>
+          <textarea name="description" id="description" placeholder="Type food description" required></textarea>
+          <label for="address">Address</label>
+          <input type="text" name="address" placeholder="Provide Address" required>
 
           <label for="foodType">Food Type</label>
           <select name="foodType" id="foodType" required>
@@ -70,16 +74,18 @@
   <?php foreach ($listings as $item): ?>
     <div class="card" onclick="showDetails(
       '<?php echo $item['listing_id']; ?>',
+      '<?php echo addslashes($item['food_name']); ?>',
       '<?php echo addslashes($item['food_type']); ?>',
       '<?php echo addslashes($item['descriptions']); ?>',
+      '<?php echo addslashes($item['address']); ?>',
       '<?php echo addslashes(date('H:i', strtotime($item['pickup_start'])) . ' - ' . date('H:i', strtotime($item['pickup_end']))); ?>',
       '<?php echo addslashes($item['contact_number']); ?>',
       '../uploads/<?php echo $item['food_image']; ?>'
     )">
       <img src="../uploads/<?php echo htmlspecialchars($item['food_image']); ?>" alt="Food Image">
       <p>
-        <strong><?php echo $item['food_type']; ?></strong><br>
-        <?php echo $item['descriptions']; ?>
+        <strong><?php echo $item['food_name']; ?></strong><br>
+        <?php echo $item['food_type']; ?>
       </p>
     </div>
   <?php endforeach; ?>

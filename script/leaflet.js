@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // 1. Initialize the map
-  var map = L.map('map').setView([15.2993, 74.1240], 13); // Default to Goa
+  var map = L.map('map').setView([15.496777,73.827827], 13); // Default to Goa
 
   // 2. Load tiles
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
