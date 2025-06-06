@@ -1,6 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  font-family: "poppins", sans-serif;
+  background: #d6c49d;
   margin: 0;
   padding: 0;
 }
@@ -10,34 +10,151 @@ body {
   min-height: 100vh;
 }
 
-/* Sidebar */
+/* ===== SIDEBAR ===== */
 .sidebar {
   width: 250px;
-  background: #5b5221;
+  background: linear-gradient(135deg, #5b5221 0%, #3a3315 100%);
   color: white;
   padding: 20px;
+  box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
 }
+
+/* Gold accent stripe */
+.sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #d4af37;
+}
+
+/* Logo/title area */
 .sidebar h2 {
-  margin-bottom: 30px;
+  margin: 0 0 30px 0;
+  padding-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
 }
+
+/* User profile */
+.sidebar p {
+  background: rgba(0,0,0,0.15);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar p::before {
+  content: "👤";
+  font-size: 1.1rem;
+}
+
+/* Menu items */
 .sidebar ul {
   list-style: none;
   padding: 0;
 }
+
 .sidebar ul li {
-  margin: 15px 0;
+  margin: 12px 0;
+  transition: all 0.3s ease;
+  border-radius: 6px;
 }
+
+.sidebar ul li:hover {
+  background: rgba(255,255,255,0.1);
+}
+
 .sidebar ul li a {
-  color: white;
+  color: rgba(255,255,255,0.9);
   text-decoration: none;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+/* Icons for menu items - CORRECTED ORDER */
+.sidebar ul li:nth-child(1) a::before { /* Home */
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>');
+  background-size: contain;
+  filter: brightness(0) invert(1);
+}
+
+.sidebar ul li:nth-child(2) a::before { /* About Us */
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>');
+  background-size: contain;
+  filter: brightness(0) invert(1);
+}
+
+.sidebar ul li:nth-child(3) a::before { /* What to list */
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 9h-2V7h2v5zm0 4h-2v-2h2v2z"/></svg>');
+  background-size: contain;
+  filter: brightness(0) invert(1);
+}
+
+.sidebar ul li:nth-child(4) a::before { /* How it works */
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg>');
+  background-size: contain;
+  filter: brightness(0) invert(1);
+}
+
+.sidebar ul li:nth-child(5) a::before { /* Logout */
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/></svg>');
+  background-size: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Hover effects */
+.sidebar ul li a:hover,
+.sidebar ul li a:focus {
+  color: white;
+  transform: translateX(3px);
+}
+
+/* Logout styling */
+.sidebar ul li:last-child a {
+  color: #ffb4b4;
 }
 
 /* Main Area */
 .main-area {
   flex: 1;
   padding: 30px;
-  background: #ffffff;
-  border-radius: 16px;
+  background:#f3efe0;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -128,30 +245,217 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  background: #5b5221;
-  border-radius: 10px;
+  background: linear-gradient(135deg, #5b5221 0%, #3a3315 100%);
+  border-radius: 12px;
   overflow: hidden;
   width: 100%;
   max-width: 300px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   color: white;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
+/* Hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Image container with subtle overlay */
 .card img {
   width: 100%;
   height: 150px;
   object-fit: cover;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
 }
 
+/* Card content area */
 .card .info {
-  padding: 10px;
+  padding: 15px;
+  position: relative;
+}
+
+/* Gold accent bar */
+.card .info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #d4af37;
+  border-radius: 3px;
 }
 
 .card .info p {
   font-size: 14px;
-  margin: 6px 0;
+  margin: 8px 0;
+  line-height: 1.4;
 }
 
+/* Highlighted text */
 .highlight {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+/* Food type indicator */
+.food-type {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.15);
+  margin-right: 8px;
+}
+
+/* Button styling */
+.card-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 15px;
+  background: rgba(255,255,255,0.9);
+  color: #5b5221;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.card-button:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+/* ================= ENHANCED MODAL ================= */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 10000;
+  display: none;
+  overflow-y: auto;
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: white;
+  margin: 5% auto;
+  padding: 0;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.modal-header {
+  background: #5b5221;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.modal .close {
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(0,0,0,0.2);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.modal .close:hover {
+  transform: rotate(90deg);
+  background: rgba(0,0,0,0.3);
+}
+
+#leafletMap {
+  height: 400px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+/* Directions button styling */
+.modal-footer button {
+  background: #5b5221;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-footer button:hover {
+  background: #3a3315;
+  transform: translateY(-1px);
+}
+
+.modal-footer button::before {
+  content: "→";
   font-weight: bold;
+}
+
+button{
+    padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
+  color: #5b5221;
+  border: none;
+}
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }

@@ -6,21 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Receiver Dashboard</title>
   <link rel="stylesheet" href="../css/receiver.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <!--Google font poppins-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
   <div class="dashboard-wrapper">
     <!-- Sidebar -->
     <div class="sidebar">
-      <h2>Waste Not</h2>
-      <p><?php echo htmlspecialchars($username); ?></p>
-      <ul>
-        <li><a href="../index.php">Home</a></li>
-        <li><a href="receiver.php">Dashboard</a></li>
-        <li><a href="../lister/lister.php">Lister Dashboard</a></li>
-        <li><a href="../auth/logout.php" style="color: white; text-decoration: none;">Logout</a></li>
-      </ul>
-    </div>
+  <h2>Waste Not</h2>
+  <p><?php echo htmlspecialchars($username); ?></p>
+  <ul>
+    <li><a href="../index.php">Home</a></li>
+    <li><a href="../about.php">About Us</a></li>
+    <li><a href="../lister/lister.php">what to list food?</a></li>
+    <li><a href="../#how1">How it works?</a></li>
+    <li><a href="../auth/logout.php">Logout</a></li>
+  </ul>
+</div>
 
     <!-- Main Area -->
    <!-- Inside the main-area div, replace everything with: -->
@@ -43,16 +49,34 @@
         <img src="../uploads/<?php echo $row['food_image']; ?>" alt="Food Image">
         <div class="info">
           <p class="highlight"><?php echo $row['food_name']; ?></p>
-          <p class="highlight">Food Type: <?php echo $row['food_type']; ?></p>
+          <p>Type: <?php echo $row['food_type']; ?></p>
           <p><?php echo $row['descriptions']; ?></p>
-          <p><?php echo $row['address']; ?></p>
+          <p class="highlight">Address: <?php echo $row['address']; ?></p>
           <p>Pickup: <?php echo date('H:i', strtotime($row['pickup_start'])) . " - " . date('H:i', strtotime($row['pickup_end'])); ?></p>
-          <p id="phone">Contact No: <?php echo $row['contact_number']; ?></p>
+          <p id="phone">Contact No: <?php echo $row['contact_number']; ?></p><hr>
+          <button onclick="openMapModal(<?php echo $row['latitude']; ?>, <?php echo $row['longitude']; ?>)">Open Map</button>
         </div>
       </div>
     <?php endwhile; ?>
   </div>
 </div>
-  <script src="../script/filter.js"></script>
+ </div> 
+<div id="mapModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Location Map</h3>
+      <span class="close" onclick="closeMapModal()">&times;</span>
+    </div>
+    <div id="leafletMap"></div>
+    <div class="modal-footer">
+      <button onclick="window.open('https://maps.google.com?q=...')">
+        Open in Google Maps
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="../script/filter.js"></script>
+<script src="../script/rdashboard.js"></script>
 </body>
 </html>

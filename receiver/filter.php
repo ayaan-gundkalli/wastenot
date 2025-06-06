@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
         echo '<div class="card">';
         echo '<img src="../uploads/' . htmlspecialchars($row['food_image']) . '" alt="Food Image">';
         echo '<div class="info">';
-        echo '<h3>' . htmlspecialchars($row['food_name']) . '</h3>'; // ✅ Food Name Display
+        echo '<h3>' . htmlspecialchars($row['food_name']) . '</h3>';
         echo '<p class="highlight">Food Type: ' . htmlspecialchars($row['food_type']) . '</p>';
         echo '<p>' . htmlspecialchars($row['descriptions']) . '</p>';
         echo '<p>Pickup: ' . date('H:i', strtotime($row['pickup_start'])) . " - " . date('H:i', strtotime($row['pickup_end'])) . '</p>';
@@ -53,6 +53,6 @@ if ($result->num_rows > 0) {
         echo '</div></div>';
     }
 } else {
-    echo '<p>No listings found.</p>';
+    echo '<p>No Food Available Yet! check back later</p>';
 }
 ?>

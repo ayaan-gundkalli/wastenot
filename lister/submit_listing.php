@@ -13,7 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $food_type = $_POST['foodType'];
     $pickup_start = $_POST['pickupStart'];
     $pickup_end = $_POST['pickupEnd'];
-    $expires_at = date("Y-m-d H:i:s", strtotime("+4 hours"));
+    // $expires_at = date("Y-m-d H:i:s", strtotime("+4 hours")); //intenitonally commented for testing important
+    $expires_at = date("Y-m-d H:i:s", strtotime("[pickup_end]"));
     $contact_number = $_POST['contact'];
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];

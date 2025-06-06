@@ -21,8 +21,10 @@
 
       <nav>
         <a href="../index.php">home</a>
-        <a href="../receiver/receiver.php">Dashboard</a>
-        <a href="#">Lister Dashboard</a>
+        <a href="../initiatives.php">Our Initiative</a>
+        <a href="../receiver/receiver.php">Need a meal?</a>
+        <a href="../#how1">How it Works?</a>
+
       </nav>
       <a href="../auth/logout.php" class="logout">Logout</a>
     </aside>
@@ -51,8 +53,8 @@
           </select>
 
           <label for="pickupTime">Pickup Time</label>
-         <input type="time" name="pickupStart" required>
-<input type="time" name="pickupEnd" required>
+          <input type="time" name="pickupStart" required>
+          <input type="time" name="pickupEnd" required>
 
 
           <label for="contact">Contact Number</label>
