@@ -392,13 +392,13 @@ footer {
   flex-direction: column;
 }
 
-.form-input,
-.form-textarea {
+.form-input
+ {
   background: #444;
   border: none;
   padding: 10px 15px;
   margin-bottom: 12px;
-  border-radius: 5px;
+  border-radius: 50px;
   color: #fff;
   font-size: 14px;
 }
@@ -411,6 +411,13 @@ footer {
 .form-textarea {
   min-height: 80px;
   resize: vertical;
+  background: #444;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 14px;
 }
 
 .feedback-form .btn {
@@ -418,7 +425,7 @@ footer {
   border: 2px solid #5b5221;
   color: #5b5221;
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
 }

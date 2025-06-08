@@ -22,7 +22,7 @@
   <ul>
     <li><a href="../index.php">Home</a></li>
     <li><a href="../about.php">About Us</a></li>
-    <li><a href="../lister/lister.php">what to list food?</a></li>
+    <li><a href="../lister/lister.php">what to share food?</a></li>
     <li><a href="../#how1">How it works?</a></li>
     <li><a href="../auth/logout.php">Logout</a></li>
   </ul>

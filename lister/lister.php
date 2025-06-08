@@ -22,7 +22,7 @@
       <nav>
         <a href="../index.php">home</a>
         <a href="../initiatives.php">Our Initiative</a>
-        <a href="../receiver/receiver.php">Need a meal?</a>
+        <a href="../receiver/receiver.php">Looking for meal?</a>
         <a href="../#how1">How it Works?</a>
 
       </nav>

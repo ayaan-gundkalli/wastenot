@@ -1,3 +1,8 @@
+<?php
+session_start();
+$isLoggedIn = isset($_SESSION['user_id']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,17 +19,23 @@
   <body>
 
     <!-- Header -->
+<header class="navbar">
+  <div class="logo">Waste Not</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="about.php">About</a>
+    <a href="initiatives.php">Our Initiatives</a>
+    
+    <?php if ($isLoggedIn): ?>
+      <a href="auth/logout.php" class="btn outlined">Logout</a>
+    <?php else: ?>
+      <a href="auth/login.php" class="btn filled">Login</a>
+      <a href="auth/signup.php" class="btn outlined">Signup</a>
+    <?php endif; ?>
+    
+  </nav>
+</header>
 
-    <header class="navbar">
-      <div class="logo">Waste Not</div>
-      <nav>
-        <a href="#">Home</a>
-        <a href="about.php">About</a>
-        <a href="initiatives.php">Our Initiatives</a>
-        <a href="auth/login.php" class="btn filled">Login</a>
-        <a href="auth/signup.php" class="btn outlined">Signup</a>
-      </nav>
-    </header>
 
     <!-- alert of feedback submission -->
      <?php if (isset($_GET['feedback']) && $_GET['feedback'] == 'success'): ?>
@@ -52,9 +63,15 @@
           </p>
 
           <div class="cta-buttons">
-            <a href="lister/lister.php" class="btn filled">List Food</a>
-            <a href="receiver/receiver.php" class="btn outlined">Find Food</a>
-          </div>
+  <?php if ($isLoggedIn): ?>
+    <a href="lister/lister.php" class="btn filled">List Food</a>
+    <a href="receiver/receiver.php" class="btn outlined">Find Food</a>
+  <?php else: ?>
+    <a href="auth/signup.php" class="btn filled">Get Started</a>
+    <a href="guest.php" class="btn outlined">Explore</a>
+  <?php endif; ?>
+</div>
+
         </div>
 
         <p class="note">

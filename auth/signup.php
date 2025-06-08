@@ -24,7 +24,7 @@
   <!-- Signup Form -->
   <div class="signup-container">
     <form action="../actions/signup_action.php" method="POST" class="signup-form">
-      <h2>Signup/Register</h2>
+      <h2>Create An Account</h2>
 
       <input type="text" name="name" placeholder=" Enter username.." required />
       <input type="email" name="email" placeholder=" Enter email.." required />
