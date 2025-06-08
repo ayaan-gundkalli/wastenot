@@ -7,34 +7,45 @@
 }
 
 body {
-  background-color: white; /* Outer background */
+  background-color: #f8f9fa; /* Lighter outer background for better contrast */
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  line-height: 1.6;
+  color: #333;
 }
 
 .outer-container {
   width: 100%;
   max-width: 1200px;
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.outer-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Inner container remains exactly as you specified */
 .inner-container {
   background-color: #5b5221; /* Inner background color */
   color: white;
   padding: 80px;
-  /* margin-top: 30px; */
 }
 
 h1 {
   font-size: 2.5rem;
   margin-bottom: 30px;
   text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 h2 {
@@ -42,6 +53,7 @@ h2 {
   margin-bottom: 20px;
   color: white;
   text-align: center;
+  font-weight: 600;
 }
 
 .content-section {
@@ -51,52 +63,84 @@ h2 {
 
 p {
   font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
   text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Enhanced button styles */
+.btncenter {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 0;
+  padding: 14px 32px;
+  background-color: white;
+  color: #5b5221;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: 2px solid white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-btn:hover {
+  background-color: transparent;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.home-btn:active {
+  transform: translateY(0);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  .outer-container {
+    border-radius: 8px;
+  }
+  
   .inner-container {
     padding: 30px 20px;
   }
 
   h1 {
     font-size: 2rem;
+    margin-bottom: 25px;
   }
 
   h2 {
     font-size: 1.5rem;
+    margin-bottom: 15px;
   }
 
   p {
     font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .home-btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
   }
 }
 
-/* home button */
-.btncenter {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-.home-btn {
-  display: inline-block;
-  margin: 40px auto 0;
-  padding: 12px 30px;
-  background-color: white;
-  color: #5b5221;
-  font-weight: bold;
-  font-size: 1rem;
-  border: 2px solid white;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
-  text-align: center;
-}
-
-.home-btn:hover {
-  background-color: #e6e6e6;
-  color: #5b5221;
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }

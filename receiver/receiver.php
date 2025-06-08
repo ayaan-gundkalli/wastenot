@@ -78,5 +78,6 @@
 
 <script src="../script/filter.js"></script>
 <script src="../script/rdashboard.js"></script>
+<?php include '../includes/footer.php'; ?>
 </body>
 </html>

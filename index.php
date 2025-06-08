@@ -165,13 +165,13 @@ if ($result && $result->num_rows > 0): ?>
       <h4 class="footer-heading">Help</h4>
       <ul>
         <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Feedback</a></li>
+        <li><a href="#feedback">Feedback</a></li>
         <li><a href="#">Report a Bug</a></li>
       </ul>
     </div>
 
     <!-- Feedback Form -->
-    <div class="footer-feedback">
+    <div class="footer-feedback" id="feedback">
       <h4 class="footer-heading">Leave Feedback</h4>
       <form action="actions/feedback_action.php" method="POST" class="feedback-form">
         <input type="text" name="name" placeholder="Your Name" required class="form-input">
