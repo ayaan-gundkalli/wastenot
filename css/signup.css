@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar - Consistent with login */
+/* Navbar*/
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -65,7 +65,6 @@ body {
   width: 100%;
 }
 
-/* Buttons - Enhanced */
 .btn {
   padding: 10px 24px;
   border-radius: 50px;
@@ -115,7 +114,7 @@ body {
   background: linear-gradient(to right, #6d6230, #5b5221);
 }
 
-/* Signup Form - Modern Card */
+/* Signup Form */
 .signup-container {
   display: flex;
   justify-content: center;
@@ -174,7 +173,7 @@ body {
   background: white;
 }
 
-/* Role Selection - Custom Styled */
+/* Role Selection */
 .role-select {
   margin: 1.5rem 0;
   padding: 1rem;
@@ -201,13 +200,12 @@ body {
   transform: scale(1.1);
 }
 
-/* Submit Button */
 .signup-form .btn {
   width: 100%;
-  padding: 14px; /* Matches login button padding */
+  padding: 14px; 
   margin: 1rem 0;
   font-size: 1rem;
-  border-radius: 8px; /* Matches login button radius */
+  border-radius: 8px; 
 }
 
 .login-link {
@@ -228,7 +226,7 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .navbar {
     padding: 1.25rem 1.5rem;

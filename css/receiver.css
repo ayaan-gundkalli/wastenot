@@ -1,6 +1,6 @@
 body {
   font-family: "poppins", sans-serif;
-  background: #d6c49d;
+    background: linear-gradient(135deg, #5b5221 0%, #3a3315 100%);
   margin: 0;
   padding: 0;
 }
@@ -9,8 +9,7 @@ body {
   display: flex;
   min-height: 100vh;
 }
-
-/* ===== SIDEBAR ===== */
+ /*sidebar */ 
 .sidebar {
   width: 250px;
   background: linear-gradient(135deg, #5b5221 0%, #3a3315 100%);
@@ -21,7 +20,6 @@ body {
   overflow: hidden;
 }
 
-/* Gold accent stripe */
 .sidebar::before {
   content: "";
   position: absolute;
@@ -32,7 +30,6 @@ body {
   background: #d4af37;
 }
 
-/* Logo/title area */
 .sidebar h2 {
   margin: 0 0 30px 0;
   padding-bottom: 15px;
@@ -43,7 +40,6 @@ body {
   position: relative;
 }
 
-/* User profile */
 .sidebar p {
   background: rgba(0,0,0,0.15);
   padding: 10px;
@@ -60,7 +56,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* Menu items */
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -87,7 +82,6 @@ body {
   transition: all 0.2s ease;
 }
 
-/* Icons for menu items - CORRECTED ORDER */
 .sidebar ul li:nth-child(1) a::before { /* Home */
   content: "";
   display: inline-block;
@@ -138,101 +132,133 @@ body {
   filter: brightness(0) invert(1);
 }
 
-/* Hover effects */
 .sidebar ul li a:hover,
 .sidebar ul li a:focus {
   color: white;
   transform: translateX(3px);
 }
 
-/* Logout styling */
 .sidebar ul li:last-child a {
   color: #ffb4b4;
 }
 
-/* Main Area */
+/* Main Area & filter */
 .main-area {
   flex: 1;
-  padding: 30px;
-  background:#f3efe0;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 2.5rem; /* Increased from 30px for better spacing */
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
   display: flex;
   flex-direction: column;
-  font-family: "Poppins", sans-serif;
+  border-radius: 16px; /* Added rounded corners */
+  transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.main-area:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
 }
 
 .filter {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 25px;
+  gap: 1rem; /* Using rem units for better scalability */
+  margin-bottom: 2rem;
   align-items: center;
 }
 
 .search-bar {
   flex: 1;
-  padding: 12px 18px;
+  min-width: 250px; /* Ensures proper sizing on mobile */
+  padding: 0.85rem 1.25rem; /* Adjusted padding */
   border: 2px solid #5b5221;
-  border-radius: 12px;
-  font-size: 15px;
+  border-radius: 14px; /* Slightly more rounded */
+  font-size: 1rem;
   background: #fafafa;
   outline: none;
-  transition: 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
 }
 
 .search-bar:focus {
   border-color: #5b5221;
   background-color: #fff;
-  box-shadow: 0 0 5px rgba(91, 82, 33, 0.2);
+  box-shadow: 0 0 0 3px rgba(91, 82, 33, 0.15); /* More visible focus state */
+  transform: scale(1.005); /* Subtle zoom effect */
 }
 
-/* Styled Dropdown */
 .type-select {
-  padding: 10px 14px;
-  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  padding-right: 2.5rem; /* Space for custom dropdown arrow */
+  border-radius: 14px;
   border: 2px solid #5b5221;
-  background: #f8f8f8;
-  font-size: 14px;
+  background: #f8f8f8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235b5221' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 1rem center;
+  font-size: 1rem;
   color: #333;
   cursor: pointer;
-  transition: 0.25s ease;
-  appearance: none; /* Removes default OS styling */;
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 10px;
+  transition: all 0.3s ease;
+  appearance: none;
+  min-width: 180px; /* Ensures consistent width */
 }
 
-.type-select:hover,
-.type-select:focus {
+.type-select:hover {
   border-color: #5b5221;
   background-color: #fff;
+  box-shadow: 0 2px 6px rgba(91, 82, 33, 0.1);
 }
 
-/* Button */
+.type-select:focus {
+  border-color: #5b5221;
+  box-shadow: 0 0 0 3px rgba(91, 82, 33, 0.15);
+  outline: none;
+}
+
 .animal-btn {
-  padding: 10px 16px;
-  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 14px;
   border: 2px solid #5b5221;
   background: #f8f8f8;
-  font-size: 14px;
+  font-size: 1rem;
+  font-weight: 500; /* Slightly bolder */
   color: #333;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .animal-btn:hover {
   background: #5b5221;
   color: white;
-  border-color: #ffffff;
+  border-color: #5b5221;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(91, 82, 33, 0.2);
 }
 
 .animal-btn.active {
   background: #5b5221;
   color: white;
-  border-color: #ffffff;
-  font-weight: 500;
+  border-color: #5b5221;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(91, 82, 33, 0.3) inset;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-area {
+    padding: 1.5rem;
+  }
+  
+  .filter {
+    gap: 0.75rem;
+  }
+  
+  .search-bar,
+  .type-select,
+  .animal-btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
 
 /* Card Content */
 .content {
@@ -256,13 +282,11 @@ body {
   position: relative;
 }
 
-/* Hover effect */
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Image container with subtle overlay */
 .card img {
   width: 100%;
   height: 150px;
@@ -270,13 +294,11 @@ body {
   border-bottom: 2px solid rgba(255,255,255,0.1);
 }
 
-/* Card content area */
 .card .info {
   padding: 15px;
   position: relative;
 }
 
-/* Gold accent bar */
 .card .info::before {
   content: "";
   position: absolute;
@@ -294,7 +316,6 @@ body {
   line-height: 1.4;
 }
 
-/* Highlighted text */
 .highlight {
   font-size: 16px;
   font-weight: 600;
@@ -302,7 +323,6 @@ body {
   letter-spacing: 0.3px;
 }
 
-/* Food type indicator */
 .food-type {
   display: inline-block;
   padding: 3px 8px;
@@ -313,7 +333,6 @@ body {
   margin-right: 8px;
 }
 
-/* Button styling */
 .card-button {
   display: inline-block;
   margin-top: 10px;
@@ -333,7 +352,7 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-/* ================= ENHANCED MODAL ================= */
+/* map modal*/
 .modal {
   position: fixed;
   top: 0;
@@ -344,7 +363,7 @@ body {
   z-index: 10000;
   display: none;
   overflow-y: auto;
-  backdrop-filter: blur(5px); /* Frosted glass effect */
+  backdrop-filter: blur(5px);
   animation: fadeIn 0.3s ease;
 }
 
@@ -420,7 +439,6 @@ body {
   border-top: 1px solid #eee;
 }
 
-/* Directions button styling */
 .modal-footer button {
   background: #5b5221;
   color: white;
@@ -459,3 +477,4 @@ button:hover {
   opacity: 0.9;
   transform: translateY(-2px);
 }
+

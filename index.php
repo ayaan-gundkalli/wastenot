@@ -49,8 +49,8 @@ $isLoggedIn = isset($_SESSION['user_id']);
     <section class="hero">
       <div class="hero-image slider">
   <div class="slide active" style="background-image: url('images/mainbg.jpg');"></div>
-  <div class="slide" style="background-image: url('images/mainbg2.jpg');"></div>
-  <div class="slide" style="background-image: url('images/mainbg3.jpg');"></div>
+  <div class="slide" style="background-image: url('images/slider2.2.jpg');"></div>
+  <div class="slide" style="background-image: url('images/slider1.2.jpg');"></div>
      </div>
 
       <div class="hero-text">
@@ -59,7 +59,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
         <div class="sub-content">
           <p class="subtitle">
             More than a platform, Waste Not is a movement to feed people, care
-            for animals, and fight food waste — right in your neighborhood.
+            for animals, and fight food waste 
           </p>
 
           <div class="cta-buttons">
@@ -87,23 +87,23 @@ $isLoggedIn = isset($_SESSION['user_id']);
 <div class="howitworks">
    <h2 id="how1">How it Works?</h2>
     <div class="steps">
-        <div class="step"> <img src="images/step1.jpeg" alt="Step 1" class="step-img">
+        <div class="step"> <img src="images/steps.webp" alt="Step 1" class="step-img">
           <h3>1. List Your Food</h3>
           <p>List surplus food by clicking a image of the food that you wants to share</p>
         </div>
         <div class="step"> <img src="images/step2.1.jpg" alt="Step 2" class="step-img">
           <h3>2. Choose category</h3>
-          <p>Choose whether the food is intended for People or Animals and mention food type aswell</p>
+          <p>"Select whether the food is meant for people or animals, and specify the type (vegetarian or non-vegetarian)."</p>
         </div>
         <div class="step"> <img src="images/step3.png" alt="Step 3" class="step-img">
           <h3>3. Arrange Pickup</h3>
           <p>Specify either the exact pickup location or provide the full address where the food should be collected.</p>
         </div>
-        <div class="step"> <img src="images/lgo11.png" alt="Step 4" class="step-img">
-          <h3>4. Make an Impact</h3>
-          <p>Your food reaches those in need, helping to reduce waste and support our community.</p>
+        <div class="step"> <img src="images/step4.jpg" alt="Step 4" class="step-img">
+          <h3>4. Confirm and Share</h3>
+          <p>Review your submission and post it to make your food available.</p>
         </div>
-</div>
+</div><br><br>
 
     <!-- Impact Sections -->
 
@@ -123,15 +123,12 @@ $isLoggedIn = isset($_SESSION['user_id']);
       <span class="impact-desc">of food in India<br>is wasted</span>
     </div>
   </div>
-</section>
+</section><br><br>
 
     <!-- feedback/reviews section -->
-
+<p id="how1">What Our Users Says</p>
   <?php
-$conn = new mysqli("localhost", "root", "ayaan", "wastenot");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db.php';
 
 $sql = "SELECT username, message FROM feedback WHERE approved = 1 ORDER BY submitted_at DESC LIMIT 3";
 $result = $conn->query($sql);
@@ -147,12 +144,7 @@ if ($result && $result->num_rows > 0): ?>
   </div>
 <?php else: ?>
   <p>No feedback available yet.</p>
-<?php endif; ?>
-
-<br>
-<br>
-<br>
-<br>
+<?php endif; ?><br><br>
 
     <!-- Footer -->
      
@@ -181,7 +173,7 @@ if ($result && $result->num_rows > 0): ?>
     <div class="footer-help">
       <h4 class="footer-heading">Help</h4>
       <ul>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
         <li><a href="#feedback">Feedback</a></li>
         <li><a href="#">Report a Bug</a></li>
       </ul>

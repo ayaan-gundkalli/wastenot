@@ -2,14 +2,12 @@
 session_start();
 include '../db.php';
 
-// Handle form submit
 if (isset($_POST['submit'])) {
     $username = $_POST['name'];
     $email = $_POST['email'];
     $userpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $role = $_POST['role'];
 
-    // Check if email exists
     $check = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $check->bind_param("s", $email);
     $check->execute();
@@ -18,7 +16,6 @@ if (isset($_POST['submit'])) {
     if ($result->num_rows > 0) {
         echo "<script>alert('Email already registered!');</script>";
     } else {
-        // Insert with updated field names
         $stmt = $conn->prepare("INSERT INTO users (username, email, userpassword, role) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $username, $email, $userpassword, $role);
         if ($stmt->execute()) {

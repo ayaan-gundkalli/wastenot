@@ -1,6 +1,7 @@
     body {
       font-family: 'poppins', sans-serif;
-      background: #f9f8f3;
+        background: linear-gradient( #5b5221 70%, #3B3413);
+
       margin: 0;
       padding: 0;
       color: #333;
@@ -15,12 +16,12 @@
       margin-bottom: 40px;
     }
     h1 {
-      color: #5b5221;
+      color: #ffffff;
       margin-bottom: 10px;
       font-size: 2.2rem;
     }
     .subtitle {
-      color: #666;
+      color: #DDDDDD;
       font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto 30px;
@@ -106,7 +107,7 @@
     }
     .btn-secondary {
       display: inline-block;
-      color: #5b5221;
+      color: #ffffff;
       padding: 10px 20px;
       border-radius: 30px;
       text-decoration: none;
@@ -117,4 +118,5 @@
     }
     .btn-secondary:hover {
       background: #f5f3e9;
+      color: #5b5221;
     }

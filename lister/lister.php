@@ -69,7 +69,7 @@
         </form>
       
     </main>
-
+<!-- listers history -->
     <aside class="details-sidebar">
       <h4>Listing Details:</h4>
       <div class="listing-grid">
@@ -98,16 +98,15 @@
   <script src="../script/ldashboard.js"></script>
   <script src="../script/leaflet.js"></script>
 
-<!-- Detail Modal (your existing modal) -->
+<!-- Detail Modal -->
 <div id="detailModal" class="modal" style="display:none;">
   <div class="modal-content">
     <span class="close-btn" onclick="closeModal()">&times;</span>
     <div id="modalBody"></div>
-    <!-- Edit button would be inside modalBody content -->
   </div>
 </div>
 
-<!-- Edit Modal (new nested modal) -->
+<!-- Edit Modal -->
 <div id="editModal" class="edit-modal" style="display:none;">
   <div class="edit-modal-content">
     <span class="edit-modal-close-btn" onclick="closeEditModal()">&times;</span>
@@ -115,7 +114,6 @@
       <h3 class="edit-modal-title">Edit Details</h3>
     </div>
     <div class="edit-modal-body" id="editModalBody">
-      <!-- Edit form will be inserted here -->
     </div>
   </div>
 </div>

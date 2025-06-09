@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/login.css"/>
 </head>
 <body>
-
+<!-- navbar -->
   <header class="navbar">
     <div class="logo">Waste Not</div>
     <nav>
@@ -22,7 +22,7 @@
       <a href="signup.php" class="btn filled">Signup</a>
     </nav>
   </header>
-
+<!-- login form -->
   <div class="login-box">
     <h2>Welcome Back</h2>
     <form method="POST" autocomplete="off">

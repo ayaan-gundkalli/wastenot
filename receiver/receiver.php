@@ -29,7 +29,6 @@
 </div>
 
     <!-- Main Area -->
-   <!-- Inside the main-area div, replace everything with: -->
 <div class="main-area">
   <!-- Filter Row -->
   <div class="filter">
@@ -61,6 +60,9 @@
   </div>
 </div>
  </div> 
+  </div>
+
+  <!-- Map Modal -->
 <div id="mapModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">

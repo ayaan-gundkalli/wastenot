@@ -4,12 +4,10 @@ function openMapModal(listerLat, listerLng) {
   const modal = document.getElementById("mapModal");
   modal.style.display = "flex";
 
-  // Clear previous map
   if (map) {
     map.remove();
   }
 
-  // Reset map container
   const mapContainer = document.getElementById("leafletMap");
   mapContainer.innerHTML = '';
   mapContainer.innerHTML = '<div id="map-canvas" style="height:100%;width:100%"></div>';
@@ -46,16 +44,12 @@ function openMapModal(listerLat, listerLng) {
       (position) => {
         const receiverLat = position.coords.latitude;
         const receiverLng = position.coords.longitude;
-
-        // Center map between receiver and lister
         map.setView([(receiverLat + listerLat) / 2, (receiverLng + listerLng) / 2], 13);
 
-        // Add blue marker for receiver
         L.marker([receiverLat, receiverLng], { icon: blueIcon })
           .addTo(map)
           .bindPopup("Your Location");
 
-        // Add red marker for lister
         L.marker([listerLat, listerLng], { icon: redIcon })
           .addTo(map)
           .bindPopup("Food Location");
@@ -83,7 +77,6 @@ function openMapModal(listerLat, listerLng) {
           }).addTo(map);
         })
         .catch(() => {
-          // Fallback: straight dashed line
           L.polyline(
             [[receiverLat, receiverLng], [listerLat, listerLng]],
             { color: '#00008b', dashArray: '5,5' }
@@ -91,7 +84,6 @@ function openMapModal(listerLat, listerLng) {
         });
       },
       () => {
-        // Geolocation failed
         L.marker([listerLat, listerLng], { icon: redIcon })
           .addTo(map)
           .bindPopup("Food Location");

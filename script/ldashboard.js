@@ -1,4 +1,3 @@
-// ===== HELPER FUNCTIONS =====
 function escapeHtml(unsafe) {
   if (!unsafe) return '';
   return unsafe.toString()
@@ -108,7 +107,7 @@ function closeEditModal() {
 
 function confirmDelete(id) {
   if (confirm("Are you sure you want to delete this listing?")) {
-    fetch(`delete_listing.php?id=${encodeURIComponent(id)}`, {
+    fetch(`delete.php?id=${encodeURIComponent(id)}`, {
       method: 'DELETE'
     })
     .then(response => {

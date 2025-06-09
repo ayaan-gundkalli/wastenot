@@ -5,9 +5,9 @@ $conditions = [];
 $params = [];
 $types = "";
 
-// Filters
 if (isset($_GET['animal']) && $_GET['animal'] == '1') {
     $conditions[] = "food_type = 'animal'";
+    
 }
 
 if (!empty($_GET['type']) && in_array($_GET['type'], ['veg', 'non-veg'])) {
@@ -16,7 +16,6 @@ if (!empty($_GET['type']) && in_array($_GET['type'], ['veg', 'non-veg'])) {
     $types .= 's';
 }
 
-// Search both in food_name and descriptions
 if (!empty($_GET['search'])) {
     $conditions[] = "(food_name LIKE ? OR descriptions LIKE ?)";
     $params[] = '%' . $_GET['search'] . '%';
@@ -24,14 +23,12 @@ if (!empty($_GET['search'])) {
     $types .= 'ss';
 }
 
-// Build query
 $sql = "SELECT * FROM listing";
 if ($conditions) {
     $sql .= " WHERE " . implode(" AND ", $conditions);
 }
 $sql .= " ORDER BY created_at DESC";
 
-// Execute
 $stmt = $conn->prepare($sql);
 if ($params) {
     $stmt->bind_param($types, ...$params);
@@ -39,7 +36,6 @@ if ($params) {
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Output listings
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<div class="card">';

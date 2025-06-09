@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +6,7 @@
 }
 
 body {
-  background-color: #f8f9fa; /* Lighter outer background for better contrast */
+  background-color: #f8f9fa;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -32,9 +31,8 @@ body {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* Inner container remains exactly as you specified */
 .inner-container {
-  background-color: #5b5221; /* Inner background color */
+  background-color: #5b5221;
   color: white;
   padding: 80px;
 }
@@ -69,7 +67,6 @@ p {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Enhanced button styles */
 .btncenter {
   display: flex;
   justify-content: center;
@@ -110,11 +107,11 @@ p {
   body {
     padding: 15px;
   }
-  
+
   .outer-container {
     border-radius: 8px;
   }
-  
+
   .inner-container {
     padding: 30px 20px;
   }
@@ -133,14 +130,13 @@ p {
     font-size: 1rem;
     margin-bottom: 15px;
   }
-  
+
   .home-btn {
     padding: 12px 28px;
     font-size: 0.95rem;
   }
 }
 
-/* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }

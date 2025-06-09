@@ -1,11 +1,4 @@
-<?php
-// guest/guest_view.php
-include 'db.php';
-
-// Fetch recent 3 listings only, public view
-$sql = "SELECT * FROM listing ORDER BY created_at DESC LIMIT 3";
-$result = $conn->query($sql);
-?>
+<?php include 'actions/guest_action.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +47,7 @@ $result = $conn->query($sql);
     <div class="guest-cta">
       <a href="auth/signup.php" class="btn-primary">Join Waste Not</a>
       <a href="auth/login.php" class="btn-secondary">I Already Have an Account</a>
+      <!-- <a href="index.php" class="btn-primary">Waste Not</a> -->
     </div>
   </div>
 </body>

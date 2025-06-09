@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Kolkata');
 include '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -13,8 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $food_type = $_POST['foodType'];
     $pickup_start = $_POST['pickupStart'];
     $pickup_end = $_POST['pickupEnd'];
-    // $expires_at = date("Y-m-d H:i:s", strtotime("+4 hours")); //intenitonally commented for testing important
-    $expires_at = date("Y-m-d H:i:s", strtotime("[pickup_end]"));
+    $expires_at = date("Y-m-d H:i:s", strtotime($pickup_end)); //working
     $contact_number = $_POST['contact'];
     $latitude = $_POST['latitude'];
     $longitude = $_POST['longitude'];
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare("INSERT INTO listing (
     user_id, food_name, food_image, descriptions, address, food_type, pickup_start, pickup_end, contact_number,latitude, longitude, expires_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-         $stmt->bind_param("issssssssdds", $user_id, $food_name, $food_image, $descriptions, $address, $food_type,$pickup_start, $pickup_end, $contact_number,$latitude, $longitude, $expires_at);
+         $stmt->bind_param("issssssssdds", $user_id, $food_name, $food_image, $descriptions, $address, $food_type, $pickup_start, $pickup_end, $contact_number, $latitude, $longitude, $expires_at);
 
 
         if ($stmt->execute()) {
