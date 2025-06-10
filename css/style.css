@@ -48,7 +48,7 @@ a {
 }
 
 .navbar nav a:not(.btn):hover {
-  color: #333;
+  color: #ffffff;
 }
 
 .navbar nav a:not(.btn)::after {
@@ -58,7 +58,7 @@ a {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #333;
+  background-color: #ffffff;
   transition: width 0.3s ease;
 }
 
@@ -587,5 +587,6 @@ footer {
   font-size: 13px;
   color: #aaa;
 }
-/* responsive */
+
+
 
