@@ -14,6 +14,9 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
+  <!-- Hamburger Icon -->
+<div class="hamburger">☰</div>
+
   <div class="dashboard-wrapper">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -48,12 +51,22 @@
         <img src="../uploads/<?php echo $row['food_image']; ?>" alt="Food Image">
         <div class="info">
           <p class="highlight"><?php echo $row['food_name']; ?></p>
+          <?php if ($row['is_half_price'] == 1): ?>
+          <span class="badge">Half Price</span>
+          <?php endif; ?>
           <p>Type: <?php echo $row['food_type']; ?></p>
           <p><?php echo $row['descriptions']; ?></p>
           <p class="highlight">Address: <?php echo $row['address']; ?></p>
           <p>Pickup: <?php echo date('H:i', strtotime($row['pickup_start'])) . " - " . date('H:i', strtotime($row['pickup_end'])); ?></p>
-          <p id="phone">Contact No: <?php echo $row['contact_number']; ?></p><hr>
-          <button onclick="openMapModal(<?php echo $row['latitude']; ?>, <?php echo $row['longitude']; ?>)">Open Map</button>
+          <?php
+          $expiresAt = strtotime($row['expires_at']);
+          $now = time();
+          $hoursLeft = round(($expiresAt - $now) / 3600);
+          $expiryText = $hoursLeft > 0 ? "Expires in {$hoursLeft} hrs" : "Expiring soon!";
+          ?>
+          <p id="phone">Contact No: <?php echo htmlspecialchars($row['contact_number']); ?></p>
+          <span class="expiry-badge"><?php echo $expiryText; ?></span>
+          <button class="openmap" onclick="openMapModal(<?php echo $row['latitude']; ?>, <?php echo $row['longitude']; ?>)">Open Map</button>
         </div>
       </div>
     <?php endwhile; ?>
@@ -80,6 +93,8 @@
 
 <script src="../script/filter.js"></script>
 <script src="../script/rdashboard.js"></script>
+<script src="../script/ham.js"></script>
+
 <?php include '../includes/footer.php'; ?>
 </body>
 </html>

@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descriptions = $_POST['description'];
     $address = $_POST['address'];
     $food_type = $_POST['foodType'];
+    $is_half_price = isset($_POST['is_half_price']) ? 1 : 0;
     $pickup_start = $_POST['pickupStart'];
     $pickup_end = $_POST['pickupEnd'];
     $expires_at = date("Y-m-d H:i:s", strtotime($pickup_end)); //working
@@ -25,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (move_uploaded_file($_FILES["foodImage"]["tmp_name"], $target_file)) {
         $food_image = basename($target_file);
         $stmt = $conn->prepare("INSERT INTO listing (
-    user_id, food_name, food_image, descriptions, address, food_type, pickup_start, pickup_end, contact_number,latitude, longitude, expires_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    user_id, food_name, food_image, descriptions, address, food_type, pickup_start, pickup_end, contact_number,latitude, longitude, expires_at, is_half_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-         $stmt->bind_param("issssssssdds", $user_id, $food_name, $food_image, $descriptions, $address, $food_type, $pickup_start, $pickup_end, $contact_number, $latitude, $longitude, $expires_at);
+         $stmt->bind_param("issssssssddsi", $user_id, $food_name, $food_image, $descriptions, $address, $food_type, $pickup_start, $pickup_end, $contact_number, $latitude, $longitude, $expires_at, $is_half_price);
 
 
         if ($stmt->execute()) {

@@ -197,6 +197,10 @@ body {
   font-size: 0.95rem;
 }
 
+.upload-form option{
+  accent-color: #27a745;
+}
+
 .upload-form input,
 .upload-form select,
 .upload-form textarea {
@@ -222,6 +226,24 @@ body {
   min-height: 100px;
   line-height: 1.5;
 }
+
+.half {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-right: 10px;
+  cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#is_half_price{
+  width: 18px;
+  height: 18px;
+  accent-color: #28a745;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
 
 .submit-btn-container {
   display: flex;
@@ -511,25 +533,50 @@ body {
 .edit-modal-cancel-btn:hover {
   background-color: #ccc;
 }
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: rgba(91, 82, 33, 0.9);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .dashboard-container {
+    padding-left: 0;
+  }
+}
 /* responsive */
 @media (max-width: 1024px) {
   .dashboard-container {
     flex-direction: column;
   }
 
+@media (max-width: 992px) {
   .sidebar {
-    width: 100%;
-    padding: 15px;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    overflow-y: auto;
   }
-
-  .sidebar nav {
-    display: none;
+  
+  .sidebar.active {
+    left: 0;
   }
-
-  .sidebar nav.active {
-    display: block;
-  }
-
+}
   .menu-toggle {
     display: block;
   }
@@ -588,6 +635,7 @@ body {
   .listing-grid .card {
     display: flex;
     align-items: center;
+    
   }
 
   .listing-grid .card img {

@@ -1,21 +1,32 @@
 <?php 
 include '../db.php';
 
+// Set timezone and get current timestamp
+date_default_timezone_set('Asia/Kolkata');
+$current_time = date("Y-m-d H:i:s");
+
 $conditions = [];
 $params = [];
 $types = "";
 
+// Always add the expiry condition
+$conditions[] = "expires_at > ?";
+$params[] = $current_time;
+$types .= 's';
+
+// Filter: Animal button
 if (isset($_GET['animal']) && $_GET['animal'] == '1') {
     $conditions[] = "food_type = 'animal'";
-    
 }
 
+// Filter: Veg / Non-Veg dropdown
 if (!empty($_GET['type']) && in_array($_GET['type'], ['veg', 'non-veg'])) {
     $conditions[] = "food_type = ?";
     $params[] = $_GET['type'];
     $types .= 's';
 }
 
+// Filter: Search text
 if (!empty($_GET['search'])) {
     $conditions[] = "(food_name LIKE ? OR descriptions LIKE ?)";
     $params[] = '%' . $_GET['search'] . '%';
@@ -23,12 +34,14 @@ if (!empty($_GET['search'])) {
     $types .= 'ss';
 }
 
+// Build final SQL query
 $sql = "SELECT * FROM listing";
 if ($conditions) {
     $sql .= " WHERE " . implode(" AND ", $conditions);
 }
 $sql .= " ORDER BY created_at DESC";
 
+// Prepare and execute
 $stmt = $conn->prepare($sql);
 if ($params) {
     $stmt->bind_param($types, ...$params);
@@ -36,6 +49,7 @@ if ($params) {
 $stmt->execute();
 $result = $stmt->get_result();
 
+// Output results
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<div class="card">';
@@ -49,6 +63,6 @@ if ($result->num_rows > 0) {
         echo '</div></div>';
     }
 } else {
-    echo '<p>No Food Available Yet! check back later</p>';
+    echo '<p>No Food Available Yet! Check back later.</p>';
 }
 ?>

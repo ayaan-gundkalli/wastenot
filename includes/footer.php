@@ -26,7 +26,7 @@ $current_year = date("Y");
     <div class="footer-help">
       <h4 class="footer-heading">Help</h4>
       <ul>
-        <li><a href="contact.php">Contact Us</a></li>
+        <li><a href="../contact.php">Contact Us</a></li>
         <li><a href="../#feedback">Feedback</a></li>
         <li><a href="report.php">Report a Bug</a></li>
       </ul>

@@ -1,8 +1,4 @@
 
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+  document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.sidebar').classList.toggle('active');
   });
-

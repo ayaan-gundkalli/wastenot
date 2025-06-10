@@ -21,18 +21,17 @@ $isLoggedIn = isset($_SESSION['user_id']);
     <!-- Header -->
 <header class="navbar">
   <div class="logo">Waste Not</div>
+  <button class="hamburger">☰</button>
   <nav>
     <a href="#">Home</a>
     <a href="about.php">About</a>
     <a href="initiatives.php">Our Initiatives</a>
-    
     <?php if ($isLoggedIn): ?>
       <a href="auth/logout.php" class="btn outlined">Logout</a>
     <?php else: ?>
       <a href="auth/login.php" class="btn filled">Login</a>
       <a href="auth/signup.php" class="btn outlined">Signup</a>
     <?php endif; ?>
-    
   </nav>
 </header>
 
@@ -166,7 +165,7 @@ if ($result && $result->num_rows > 0): ?>
         <li><a href="signup.php">Sign Up</a></li>
         <li><a href="about.php">About Us</a></li>
         <li><a href="initiatives.php">Our Initiatives</a></li>
-        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="term.php">Terms and Conditions</a></li>
       </ul>
     </div>
 

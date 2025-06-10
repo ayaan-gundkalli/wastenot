@@ -13,6 +13,8 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
+    <!-- Hamburger Icon -->
+<div class="hamburger">☰</div>
   <div class="dashboard-container">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -51,6 +53,10 @@
             <option value="non-veg">Non-Veg</option>
             <option value="animal">For Animals</option>
           </select>
+
+           <label for="is_half_price" class="half"> Offer at Half Price</label>
+           <input type="checkbox" name="is_half_price" id="is_half_price" value="1">
+          
 
           <label for="pickupTime">Pickup Time</label>
           <input type="time" name="pickupStart" required>
@@ -97,6 +103,8 @@
 
   <script src="../script/ldashboard.js"></script>
   <script src="../script/leaflet.js"></script>
+  <script src="../script/ham.js"></script>
+
 
 <!-- Detail Modal -->
 <div id="detailModal" class="modal" style="display:none;">
