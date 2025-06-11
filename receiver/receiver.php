@@ -51,9 +51,12 @@
         <img src="../uploads/<?php echo $row['food_image']; ?>" alt="Food Image">
         <div class="info">
           <p class="highlight"><?php echo $row['food_name']; ?></p>
-          <?php if ($row['is_half_price'] == 1): ?>
+           <?php if ($row['is_half_price'] == 1): ?>
           <span class="badge">Half Price</span>
+          <?php else: ?>
+          <span class="badgefree">Free</span>
           <?php endif; ?>
+
           <p>Type: <?php echo $row['food_type']; ?></p>
           <p><?php echo $row['descriptions']; ?></p>
           <p class="highlight">Address: <?php echo $row['address']; ?></p>

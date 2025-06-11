@@ -51,17 +51,39 @@ $result = $stmt->get_result();
 
 // Output results
 if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
+    
+ 
+ 
+ 
+ while ($row = $result->fetch_assoc()) {
         echo '<div class="card">';
+        
+        if ((int)$row['is_half_price'] === 1) {
+            echo '<span class="badge">Half Price</span>';
+        } else {
+            echo '<span class="badgefree">Free</span>';
+        }
+
         echo '<img src="../uploads/' . htmlspecialchars($row['food_image']) . '" alt="Food Image">';
+
         echo '<div class="info">';
-        echo '<h3>' . htmlspecialchars($row['food_name']) . '</h3>';
-        echo '<p class="highlight">Food Type: ' . htmlspecialchars($row['food_type']) . '</p>';
+        echo '<p class="highlight">' . htmlspecialchars($row['food_name']) . '</p>';
+        echo '<p>Type: ' . htmlspecialchars($row['food_type']) . '</p>';
         echo '<p>' . htmlspecialchars($row['descriptions']) . '</p>';
+        echo '<p class="highlight">Address: ' . htmlspecialchars($row['address']) . '</p>';
         echo '<p>Pickup: ' . date('H:i', strtotime($row['pickup_start'])) . " - " . date('H:i', strtotime($row['pickup_end'])) . '</p>';
+
+        $expiresAt = strtotime($row['expires_at']);
+        $now = time();
+        $hoursLeft = round(($expiresAt - $now) / 3600);
+        $expiryText = $hoursLeft > 0 ? "Expires in {$hoursLeft} hrs" : "Expiring soon!";
+        
         echo '<p id="phone">Contact No: ' . htmlspecialchars($row['contact_number']) . '</p>';
+        echo '<span class="expiry-badge">' . $expiryText . '</span>';
+        echo '<button class="openmap" onclick="openMapModal(' . $row['latitude'] . ', ' . $row['longitude'] . ')">Open Map</button>';
         echo '</div></div>';
-    }
+      }
+
 } else {
     echo '<p>No Food Available Yet! Check back later.</p>';
 }

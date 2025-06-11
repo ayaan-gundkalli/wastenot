@@ -13,7 +13,16 @@
       rel="stylesheet"
     />
 </head>
+  <header class="navbar">
+    <div class="logo">Waste Not</div>
+    <nav>
+      <a href="index.php">home</a>
+      <a href="about.php">about us</a>
+      <a href="auth/signup.php" class="btn outlined">signup</a>
+    </nav>
+  </header>
 <body>
+  <div class="container">
   <h1>Terms and Conditions</h1>
   <p>Welcome to <strong>WasteNot</strong>, a community-driven food-sharing platform committed to reducing food waste by connecting food providers with individuals and NGOs in need. By accessing or using our platform, you agree to the following Terms and Conditions.</p>
 
@@ -57,5 +66,43 @@
   <p>For any questions regarding these terms, please contact us at <a href="mailto:support@wastenot.com">support@wastenot.com</a>.</p>
 
   <p>Effective Date: June 9, 2025</p>
+
+  </div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-about">
+      <h2 class="brand-name"><span class="brand-highlight">Wast</span>e Not</h2>
+      <!-- <p>
+        We provide a <strong>community-driven</strong> and <strong>purpose-built</strong> platform 
+        to reduce food waste and connect those in need.
+      </p> -->
+    </div>
+
+    <div class="footer-links">
+      <h4 class="footer-heading">Useful Links</h4>
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="auth/login.php">Login</a></li>
+        <li><a href="about.php">About Us</a></li>
+        <li><a href="initiatives.php">Our Initiatives</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-help">
+      <h4 class="footer-heading">Help</h4>
+      <ul>
+        <li><a href="contact.php">Contact Us</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+        <li><a href="term.php">Terms and Conditions</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Waste Not. All rights reserved. | Made with care to reduce food waste and support the community.</p>
+  </div>
+</footer>
 </body>
 </html>

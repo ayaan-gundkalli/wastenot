@@ -19,7 +19,6 @@ $current_year = date("Y");
         <li><a href="../auth/logout.php">Logout</a></li>
         <li><a href="../about.php">About Us</a></li>
         <li><a href="../initiatives.php">Our Initiatives</a></li>
-        <li><a href="terms.php">Terms and Conditions</a></li>
       </ul>
     </div>
 
@@ -28,7 +27,8 @@ $current_year = date("Y");
       <ul>
         <li><a href="../contact.php">Contact Us</a></li>
         <li><a href="../#feedback">Feedback</a></li>
-        <li><a href="report.php">Report a Bug</a></li>
+        <li><a href="../term.php">Terms and Conditions</a></li>
+
       </ul>
     </div>
   </div>

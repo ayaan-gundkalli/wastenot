@@ -161,11 +161,10 @@ if ($result && $result->num_rows > 0): ?>
     <div class="footer-links">
       <h4 class="footer-heading">Useful Links</h4>
       <ul>
-        <li><a href="login.php">Login</a></li>
-        <li><a href="signup.php">Sign Up</a></li>
+        <li><a href="auth/login.php">Login</a></li>
+        <li><a href="auth/signup.php">Sign Up</a></li>
         <li><a href="about.php">About Us</a></li>
         <li><a href="initiatives.php">Our Initiatives</a></li>
-        <li><a href="term.php">Terms and Conditions</a></li>
       </ul>
     </div>
 
@@ -174,7 +173,8 @@ if ($result && $result->num_rows > 0): ?>
       <ul>
         <li><a href="contact.php">Contact Us</a></li>
         <li><a href="#feedback">Feedback</a></li>
-        <li><a href="#">Report a Bug</a></li>
+        <li><a href="term.php">Terms and Conditions</a></li>
+
       </ul>
     </div>
 

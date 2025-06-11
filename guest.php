@@ -14,6 +14,14 @@
 
 </head>
 <body>
+  <header class="main-header">
+    <div class="logo-container">
+      <a href="index.php" class="logo-link">
+        <span class="logo-text">WasteNot</span>
+      </a>
+    </div>
+  </header>
+
   <div class="container">
     <div class="header">
       <h1>Find Free Food in Your Community</h1>

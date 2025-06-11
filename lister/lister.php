@@ -59,8 +59,8 @@
           
 
           <label for="pickupTime">Pickup Time</label>
-          <input type="time" name="pickupStart" required>
-          <input type="time" name="pickupEnd" required>
+          From<input type="time" name="pickupStart" required>
+          Till<input type="time" name="pickupEnd" required>
 
 
           <label for="contact">Contact Number</label>
