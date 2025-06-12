@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $conn->prepare("UPDATE listing SET 
       food_name = ?, descriptions = ?, address = ?, food_type = ?, 
       contact_number = ?
-      WHERE listing_id = ? AND user_id = ?");
+      WHERE id = ? AND user_id = ?");
 
     $stmt->bind_param("sssssii", $food_name, $descriptions, $address, $food_type,
         $contact, $id, $user_id);

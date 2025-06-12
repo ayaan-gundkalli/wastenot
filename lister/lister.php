@@ -83,7 +83,7 @@
   <?php $isExpired = strtotime($item['expires_at']) <= time(); ?>
   <div 
     class="card openModalBtn <?php echo $isExpired ? 'expired' : ''; ?>"
-    data-id="<?= $item['listing_id']; ?>"
+    data-id="<?= $item['id']; ?>"
     data-foodname="<?= htmlspecialchars($item['food_name']); ?>"
     data-foodtype="<?= htmlspecialchars($item['food_type']); ?>"
     data-description="<?= htmlspecialchars($item['descriptions']); ?>"
