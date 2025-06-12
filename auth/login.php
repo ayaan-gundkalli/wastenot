@@ -18,7 +18,7 @@
     <div class="logo">Waste Not</div>
     <nav>
       <a href="../index.php">home</a>
-      <a href="../about.php">about us</a>
+      <a href="../pages/about.php">about us</a>
       <a href="signup.php" class="btn filled">Signup</a>
     </nav>
   </header>

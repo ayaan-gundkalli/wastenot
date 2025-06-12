@@ -16,7 +16,7 @@
     <div class="logo">Waste Not</div>
     <nav>
       <a href="../index.php">home</a>
-      <a href="../about.php">about us</a>
+      <a href="../pages/about.php">about us</a>
       <a href="login.php" class="btn outlined">Login</a>
     </nav>
   </header>
@@ -32,8 +32,8 @@
 
       <div class="role-select">
         <label>Your Role?</label>
-        <label><input type="checkbox" name="role" value="lister" required> Lister</label>
-        <label><input type="checkbox" name="role" value="receiver" required> Receiver</label>
+        <label><input type="radio" name="role" value="lister" required> Lister</label>
+        <label><input type="radio" name="role" value="receiver" required> Receiver</label>
       </div>
 
       <button type="submit" name="submit" class="btn fulled">Signup</button>

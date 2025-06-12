@@ -21,7 +21,6 @@
     document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
   });
   
-  // Close menu when clicking links
   document.querySelectorAll('.navbar nav a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('active');

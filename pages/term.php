@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms and Conditions | WasteNot</title>
-    <link rel="stylesheet" href="css/term.css">
+    <link rel="stylesheet" href="../css/term.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -16,9 +16,9 @@
   <header class="navbar">
     <div class="logo">Waste Not</div>
     <nav>
-      <a href="index.php">home</a>
+      <a href="../index.php">home</a>
       <a href="about.php">about us</a>
-      <a href="auth/signup.php" class="btn outlined">signup</a>
+      <a href="../auth/signup.php" class="btn outlined">signup</a>
     </nav>
   </header>
 <body>
@@ -54,7 +54,7 @@
   <p>WasteNot acts solely as a facilitator for connecting individuals and organizations willing to share surplus food with those in need. The platform does not guarantee or take responsibility for the safety, hygiene, quality, or suitability of the food listed or received. Additionally, WasteNot does not process, manage, or involve itself in any form of monetary transactions between parties. Users are advised to exercise discretion, follow proper food safety practices, and handle any payment matters independently and at their own risk.</p>
 
   <h2>6. Privacy</h2>
-  <p>User data is collected for the purpose of facilitating food sharing and will not be sold or misused. Refer to our <a href="#">Privacy Policy</a> for full details.</p>
+  <p>User data is collected for the purpose of facilitating food sharing and will not be sold or misused.</p>
 
   <h2>7. Termination</h2>
   <p>WasteNot reserves the right to suspend or terminate accounts violating these terms without prior notice.</p>
@@ -63,7 +63,7 @@
   <p>We reserve the right to update these Terms and Conditions at any time. Continued use of the platform implies acceptance of the latest terms.</p>
 
   <h2>9. Contact</h2>
-  <p>For any questions regarding these terms, please contact us at <a href="mailto:support@wastenot.com">support@wastenot.com</a>.</p>
+  <p>For any questions regarding these terms, please contact us at <a href="mailto:wastenot.org0@gmail.com">wastenot.org0@gmail.com</a>.</p>
 
   <p>Effective Date: June 9, 2025</p>
 
@@ -82,8 +82,8 @@
     <div class="footer-links">
       <h4 class="footer-heading">Useful Links</h4>
       <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="auth/login.php">Login</a></li>
+        <li><a href="../index.php">Home</a></li>
+        <li><a href="../auth/login.php">Login</a></li>
         <li><a href="about.php">About Us</a></li>
         <li><a href="initiatives.php">Our Initiatives</a></li>
       </ul>
@@ -93,7 +93,7 @@
       <h4 class="footer-heading">Help</h4>
       <ul>
         <li><a href="contact.php">Contact Us</a></li>
-        <li><a href="#feedback">Feedback</a></li>
+        <li><a href="../#feedback">Feedback</a></li>
         <li><a href="term.php">Terms and Conditions</a></li>
 
       </ul>

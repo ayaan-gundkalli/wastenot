@@ -1,5 +1,5 @@
 <?php 
-include '../db.php';
+include '../includes/db.php';
 
 // Set timezone and get current timestamp
 date_default_timezone_set('Asia/Kolkata');

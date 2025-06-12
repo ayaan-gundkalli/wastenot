@@ -24,8 +24,8 @@ $isLoggedIn = isset($_SESSION['user_id']);
   <button class="hamburger">☰</button>
   <nav>
     <a href="#">Home</a>
-    <a href="about.php">About</a>
-    <a href="initiatives.php">Our Initiatives</a>
+    <a href="pages/about.php">About</a>
+    <a href="pages/initiatives.php">Our Initiatives</a>
     <?php if ($isLoggedIn): ?>
       <a href="auth/logout.php" class="btn outlined">Logout</a>
     <?php else: ?>
@@ -67,7 +67,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
     <a href="receiver/receiver.php" class="btn outlined">Find Food</a>
   <?php else: ?>
     <a href="auth/signup.php" class="btn filled">Get Started</a>
-    <a href="guest.php" class="btn outlined">Explore</a>
+    <a href="receiver/guest.php" class="btn outlined">Explore</a>
   <?php endif; ?>
 </div>
 
@@ -127,7 +127,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
     <!-- feedback/reviews section -->
 <p id="how1">What Our Users Says</p>
   <?php
-include 'db.php';
+include 'includes/db.php';
 
 $sql = "SELECT username, message FROM feedback WHERE approved = 1 ORDER BY submitted_at DESC LIMIT 3";
 $result = $conn->query($sql);
@@ -163,17 +163,17 @@ if ($result && $result->num_rows > 0): ?>
       <ul>
         <li><a href="auth/login.php">Login</a></li>
         <li><a href="auth/signup.php">Sign Up</a></li>
-        <li><a href="about.php">About Us</a></li>
-        <li><a href="initiatives.php">Our Initiatives</a></li>
+        <li><a href="pages/about.php">About Us</a></li>
+        <li><a href="pages/initiatives.php">Our Initiatives</a></li>
       </ul>
     </div>
 
     <div class="footer-help">
       <h4 class="footer-heading">Help</h4>
       <ul>
-        <li><a href="contact.php">Contact Us</a></li>
+        <li><a href="pages/contact.php">Contact Us</a></li>
         <li><a href="#feedback">Feedback</a></li>
-        <li><a href="term.php">Terms and Conditions</a></li>
+        <li><a href="pages/term.php">Terms and Conditions</a></li>
 
       </ul>
     </div>

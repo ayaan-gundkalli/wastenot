@@ -118,7 +118,6 @@ function confirmDelete(id) {
   }
 }
 
-// Close modals when clicking outside
 window.onclick = function(event) {
   if (event.target === document.getElementById("detailModal")) {
     closeModal();
@@ -127,28 +126,28 @@ window.onclick = function(event) {
     closeEditModal();
   }
 };
-//might need but not important
-// document.addEventListener("DOMContentLoaded", function () {
-//   document.querySelectorAll('.openModalBtn').forEach(card => {
-//     card.addEventListener('click', () => {
-//       const expiresAt = new Date(card.dataset.expiresAt);
-//       const now = new Date();
 
-//       if (expiresAt <= now) {
-//         alert("This listing has expired and cannot be viewed or edited.");
-//         return;
-//       }
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.openModalBtn').forEach(card => {
+    card.addEventListener('click', () => {
+      const expiresAt = new Date(card.dataset.expiresAt);
+      const now = new Date();
 
-//       showDetails(
-//         card.dataset.id,
-//         card.dataset.foodname,
-//         card.dataset.foodtype,
-//         card.dataset.description,
-//         card.dataset.address,
-//         card.dataset.pickup,
-//         card.dataset.contact,
-//         card.dataset.image
-//       );
-//     });
-//   });
-// });
+      if (expiresAt <= now) {
+        alert("This listing has expired and cannot be viewed or edited.");
+        return;
+      }
+
+      showDetails(
+        card.dataset.id,
+        card.dataset.foodname,
+        card.dataset.foodtype,
+        card.dataset.description,
+        card.dataset.address,
+        card.dataset.pickup,
+        card.dataset.contact,
+        card.dataset.image
+      );
+    });
+  });
+});

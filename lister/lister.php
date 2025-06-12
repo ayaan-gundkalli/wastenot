@@ -23,7 +23,7 @@
 
       <nav>
         <a href="../index.php">home</a>
-        <a href="../initiatives.php">Our Initiative</a>
+        <a href="../pages/initiatives.php">Our Initiative</a>
         <a href="../receiver/receiver.php">Looking for meal?</a>
         <a href="../#how1">How it Works?</a>
 
@@ -79,24 +79,28 @@
     <aside class="details-sidebar">
       <h4>Listing Details:</h4>
       <div class="listing-grid">
-  <?php foreach ($listings as $item): ?>
-    <div class="card" onclick="showDetails(
-      '<?php echo $item['listing_id']; ?>',
-      '<?php echo addslashes($item['food_name']); ?>',
-      '<?php echo addslashes($item['food_type']); ?>',
-      '<?php echo addslashes($item['descriptions']); ?>',
-      '<?php echo addslashes($item['address']); ?>',
-      '<?php echo addslashes(date('H:i', strtotime($item['pickup_start'])) . ' - ' . date('H:i', strtotime($item['pickup_end']))); ?>',
-      '<?php echo addslashes($item['contact_number']); ?>',
-      '../uploads/<?php echo $item['food_image']; ?>'
-    )">
-      <img src="../uploads/<?php echo htmlspecialchars($item['food_image']); ?>" alt="Food Image">
-      <p>
-        <strong><?php echo $item['food_name']; ?></strong><br>
-        <?php echo $item['food_type']; ?>
-      </p>
-    </div>
-  <?php endforeach; ?>
+<?php foreach ($listings as $item): ?>
+  <?php $isExpired = strtotime($item['expires_at']) <= time(); ?>
+  <div 
+    class="card openModalBtn <?php echo $isExpired ? 'expired' : ''; ?>"
+    data-id="<?= $item['listing_id']; ?>"
+    data-foodname="<?= htmlspecialchars($item['food_name']); ?>"
+    data-foodtype="<?= htmlspecialchars($item['food_type']); ?>"
+    data-description="<?= htmlspecialchars($item['descriptions']); ?>"
+    data-address="<?= htmlspecialchars($item['address']); ?>"
+    data-pickup="<?= htmlspecialchars(date('H:i', strtotime($item['pickup_start'])) . ' - ' . date('H:i', strtotime($item['pickup_end']))); ?>"
+    data-contact="<?= htmlspecialchars($item['contact_number']); ?>"
+    data-image="../uploads/<?= htmlspecialchars($item['food_image']); ?>"
+    data-expires-at="<?= $item['expires_at']; ?>"
+  >
+    <img src="../uploads/<?= htmlspecialchars($item['food_image']); ?>" alt="Food Image">
+    <p>
+      <strong><?= htmlspecialchars($item['food_name']); ?></strong><br>
+      <?= htmlspecialchars($item['food_type']); ?>
+    </p>
+  </div>
+<?php endforeach; ?>
+
 </div>
     </aside>
   </div>

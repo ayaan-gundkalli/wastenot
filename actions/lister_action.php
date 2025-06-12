@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-require_once '../db.php';
+require_once '../includes/db.php';
 
 $userId = $_SESSION['user_id'];
 $sql = "SELECT * FROM listing WHERE user_id = ? ORDER BY created_at DESC";
@@ -19,3 +19,4 @@ $listings = [];
 while ($row = $result->fetch_assoc()) {
     $listings[] = $row;
 }
+?>

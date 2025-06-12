@@ -14,17 +14,15 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
-  <!-- Hamburger Icon -->
 <div class="hamburger">☰</div>
 
   <div class="dashboard-wrapper">
-    <!-- Sidebar -->
     <div class="sidebar">
   <h2>Waste Not</h2>
   <p><?php echo htmlspecialchars($username); ?></p>
   <ul>
     <li><a href="../index.php">Home</a></li>
-    <li><a href="../about.php">About Us</a></li>
+    <li><a href="../pages/about.php">About Us</a></li>
     <li><a href="../lister/lister.php">what to share food?</a></li>
     <li><a href="../#how1">How it works?</a></li>
     <li><a href="../auth/logout.php">Logout</a></li>
@@ -87,9 +85,6 @@
     </div>
     <div id="leafletMap"></div>
     <div class="modal-footer">
-      <button onclick="window.open('https://maps.google.com?q=...')">
-        Open in Google Maps
-      </button>
     </div>
   </div>
 </div>

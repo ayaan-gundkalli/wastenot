@@ -19,11 +19,4 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('latitude').value = lat;
     document.getElementById('longitude').value = lng;
   });
-
-  // 4. Optional: Set bounds to Goa region only
-//   var bounds = L.latLngBounds([15.2, 74.1], [15.5, 74.3]);
-//   map.setMaxBounds(bounds);
-//   map.on('drag', function () {
-//     map.panInsideBounds(bounds, { animate: false });
-//   });
 });

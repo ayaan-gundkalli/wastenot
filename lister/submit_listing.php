@@ -1,7 +1,7 @@
 <?php
 session_start();
 date_default_timezone_set('Asia/Kolkata');
-include '../db.php';
+include '../includes/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($_SESSION['user_id'])) {
