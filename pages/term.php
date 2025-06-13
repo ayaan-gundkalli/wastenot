@@ -1,5 +1,5 @@
 <?php
-// terms.php - Professional Terms and Conditions for WasteNot
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

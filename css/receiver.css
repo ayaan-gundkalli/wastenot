@@ -85,7 +85,7 @@ body {
   transition: all 0.2s ease;
 }
 
-.sidebar ul li:nth-child(1) a::before { /* Home */
+.sidebar ul li:nth-child(1) a::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -95,7 +95,7 @@ body {
   filter: brightness(0) invert(1);
 }
 
-.sidebar ul li:nth-child(2) a::before { /* About Us */
+.sidebar ul li:nth-child(2) a::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -105,7 +105,7 @@ body {
   filter: brightness(0) invert(1);
 }
 
-.sidebar ul li:nth-child(3) a::before { /* What to list */
+.sidebar ul li:nth-child(3) a::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -115,7 +115,7 @@ body {
   filter: brightness(0) invert(1);
 }
 
-.sidebar ul li:nth-child(4) a::before { /* How it works */
+.sidebar ul li:nth-child(4) a::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -125,7 +125,7 @@ body {
   filter: brightness(0) invert(1);
 }
 
-.sidebar ul li:nth-child(5) a::before { /* Logout */
+.sidebar ul li:nth-child(5) a::before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -148,50 +148,50 @@ body {
 /* Main Area & filter */
 .main-area {
   flex: 1;
-  padding: 2.5rem; /* Increased from 30px for better spacing */
+  padding: 2.5rem;
   background: #ffffff;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  border-radius: 16px; /* Added rounded corners */
-  transition: all 0.3s ease; /* Smooth transitions for hover effects */
+  border-radius: 16px;
+  transition: all 0.3s ease;
 }
 
 .main-area:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
 .filter {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem; /* Using rem units for better scalability */
+  gap: 1rem;
   margin-bottom: 2rem;
   align-items: center;
 }
 
 .search-bar {
   flex: 1;
-  min-width: 250px; /* Ensures proper sizing on mobile */
-  padding: 0.85rem 1.25rem; /* Adjusted padding */
+  min-width: 250px;
+  padding: 0.85rem 1.25rem;
   border: 2px solid #5b5221;
-  border-radius: 14px; /* Slightly more rounded */
+  border-radius: 14px;
   font-size: 1rem;
   background: #fafafa;
   outline: none;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow for depth */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .search-bar:focus {
   border-color: #5b5221;
   background-color: #fff;
-  box-shadow: 0 0 0 3px rgba(91, 82, 33, 0.15); /* More visible focus state */
-  transform: scale(1.005); /* Subtle zoom effect */
+  box-shadow: 0 0 0 3px rgba(91, 82, 33, 0.15);
+  transform: scale(1.005);
 }
 
 .type-select {
   padding: 0.75rem 1.25rem;
-  padding-right: 2.5rem; /* Space for custom dropdown arrow */
+  padding-right: 2.5rem;
   border-radius: 14px;
   border: 2px solid #5b5221;
   background: #f8f8f8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235b5221' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 1rem center;
@@ -200,7 +200,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   appearance: none;
-  min-width: 180px; /* Ensures consistent width */
+  min-width: 180px;
 }
 
 .type-select:hover {
@@ -221,7 +221,7 @@ body {
   border: 2px solid #5b5221;
   background: #f8f8f8;
   font-size: 1rem;
-  font-weight: 500; /* Slightly bolder */
+  font-weight: 500;
   color: #333;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -525,8 +525,6 @@ button:hover {
   transform: translateY(-2px);
 }
 
-
-/* Mobile First: Hide sidebar by default */
 @media (max-width: 992px) {
   .sidebar {
     position: fixed;

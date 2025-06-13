@@ -12,7 +12,6 @@ function htmlEscapeJson(obj) {
   return JSON.stringify(obj).replace(/"/g, '&quot;');
 }
 
-// ===== MAIN FUNCTIONS =====
 function showDetails(id, food_name, foodType, descriptions, address, pickupTime, contact, imagePath) {
   const modal = document.getElementById("detailModal");
   const modalBody = document.getElementById("modalBody");
