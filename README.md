@@ -7,7 +7,7 @@ connecting food providers (Listers) with those in need (Receivers).
 ## Live Demo
 
 > [Visit Website](https://wastenot.rf.gd/) *(Hosted on InfinityFree)*  
-> ⚠️ DNS may take up to 72 hours to propagate for new visitors.
+> It's Live For Demo testing
 
 ---
 
@@ -75,7 +75,7 @@ connecting food providers (Listers) with those in need (Receivers).
    git clone https://github.com/ayaan-gundkalli/wastenot.git
 
 2. import Database:
-   Import wastenot_db.sql into your local or online PHPMyAdmin.
+   Import wastenot.sql into your local or online PHPMyAdmin.
 
 3. Configure database connection in includes/db.php:
    $conn = new mysqli('localhost', 'root', '', 'wastenot');
